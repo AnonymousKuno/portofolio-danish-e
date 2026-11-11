@@ -4,27 +4,84 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Inisialisasi Tema Terang / Gelap (Dark & Light Mode)
+  // 1. Inisialisasi Transisi Halus Antarhalaman (Smooth Page Transitions)
+  initPageTransitions();
+
+  // 2. Inisialisasi Tema Terang / Gelap (Dark & Light Mode)
   initThemeToggle();
 
-  // 2. Inisialisasi Navigasi & Mobile Menu
+  // 3. Inisialisasi Navigasi & Mobile Menu
   initNavigation();
 
-  // 3. Inisialisasi Dinamis Footer & Tahun
+  // 4. Inisialisasi Animasi Teks Berputar (Typewriter Effect)
+  initTypewriter();
+
+  // 5. Inisialisasi Animasi Scroll Reveal (Elemen Muncul Dinamis)
+  initScrollReveal();
+
+  // 6. Inisialisasi Tombol Kembali ke Atas (Back to Top)
+  initBackToTop();
+
+  // 7. Inisialisasi Dinamis Footer & Tahun
   initFooterYear();
 
-  // 4. Inisialisasi Pengelolaan Foto Profil (Bisa Diganti Sendiri oleh Pengguna)
+  // 8. Inisialisasi Pengelolaan Foto Profil (Bisa Diganti Sendiri oleh Pengguna)
   initProfilePhotoManager();
 
-  // 5. Inisialisasi Form Kontak Interaktif (jika berada di halaman kontak)
+  // 9. Inisialisasi Form Kontak Interaktif
   initContactForm();
 
-  // 6. Inisialisasi Animasi Bilah Keahlian (Skill Bars)
+  // 10. Inisialisasi Animasi Bilah Keahlian (Skill Bars)
   initSkillBars();
 
-  // 7. Inisialisasi Efek Scroll Navbar
+  // 11. Inisialisasi Efek Scroll Navbar
   initScrollEffects();
 });
+
+/**
+ * 1. Transisi Mulus Antarhalaman (Smooth Page Transition Interception)
+ */
+function initPageTransitions() {
+  // Trigger animasi halaman masuk saat siap
+  requestAnimationFrame(() => {
+    document.body.classList.add('page-loaded');
+  });
+
+  // Saat halaman dibuka dari cache riwayat peramban (back/forward)
+  window.addEventListener('pageshow', () => {
+    document.body.classList.remove('page-exiting');
+    document.body.classList.add('page-loaded');
+  });
+
+  // Intersep klik tautan antarhalaman
+  document.querySelectorAll('a[href]').forEach(link => {
+    const href = link.getAttribute('href');
+    if (
+      href &&
+      !href.startsWith('#') &&
+      !href.startsWith('http') &&
+      !href.startsWith('mailto:') &&
+      !href.startsWith('tel:') &&
+      !link.hasAttribute('target')
+    ) {
+      link.addEventListener('click', (e) => {
+        if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+
+        const currentFile = window.location.pathname.split('/').pop() || 'index.html';
+        const targetFile = href.split('/').pop().split('#')[0];
+        if (currentFile === targetFile) return;
+
+        e.preventDefault();
+        document.body.classList.remove('page-loaded');
+        document.body.classList.add('page-exiting');
+
+        setTimeout(() => {
+          window.location.href = href;
+        }, 260);
+      });
+    }
+  });
+}
 
 /**
  * Pengaturan Pengalihan Tema Gelap / Terang (Dark & Light Mode)
@@ -127,7 +184,18 @@ function initNavigation() {
     });
   }
 
-  // ScrollSpy Otomatis: Menyorot menu aktif saat halaman digulir (scrolled)
+  // Tandai nav-link yang aktif sesuai nama halaman saat ini
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-link').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === currentPath || (currentPath === '' && href === 'index.html') || (currentPath === '/' && href === 'index.html')) {
+      link.classList.add('active');
+    } else if (!href.startsWith('#')) {
+      link.classList.remove('active');
+    }
+  });
+
+  // ScrollSpy Otomatis jika terdapat sections dalam 1 halaman
   const sections = document.querySelectorAll('section[id]');
   const allNavLinks = document.querySelectorAll('.nav-link');
 
@@ -153,6 +221,110 @@ function initNavigation() {
       });
     });
   }
+}
+
+/**
+ * 3. Animasi Efek Mengetik Otomatis (Typewriter Effect) di Hero Section
+ */
+function initTypewriter() {
+  const target = document.getElementById('typing-text');
+  if (!target) return;
+
+  const words = [
+    'Siswa Kelas 10 SMK TKJ',
+    'Eksplorasi Jaringan Komputer',
+    'Scripting Otomasi Python',
+    'Analisis Paket Wireshark',
+    'Perancangan Struktur Web HTML'
+  ];
+
+  let wordIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  let typeSpeed = 80;
+
+  function typeLoop() {
+    const currentWord = words[wordIndex];
+
+    if (isDeleting) {
+      target.textContent = currentWord.substring(0, charIndex - 1);
+      charIndex--;
+      typeSpeed = 40;
+    } else {
+      target.textContent = currentWord.substring(0, charIndex + 1);
+      charIndex++;
+      typeSpeed = 80;
+    }
+
+    if (!isDeleting && charIndex === currentWord.length) {
+      typeSpeed = 2000; // jeda saat kata selesai diketik
+      isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      wordIndex = (wordIndex + 1) % words.length;
+      typeSpeed = 450; // jeda sebelum mulai kata berikutnya
+    }
+
+    setTimeout(typeLoop, typeSpeed);
+  }
+
+  typeLoop();
+}
+
+/**
+ * 4. Animasi Scroll Reveal (Elemen Muncul Mulus Menggunakan IntersectionObserver)
+ */
+function initScrollReveal() {
+  const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+  if (revealElements.length === 0) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  revealElements.forEach(el => observer.observe(el));
+}
+
+/**
+ * 5. Tombol Mengambang Kembali ke Atas (Back to Top)
+ */
+function initBackToTop() {
+  let btn = document.getElementById('back-to-top-btn');
+  if (!btn) {
+    btn = document.createElement('button');
+    btn.id = 'back-to-top-btn';
+    btn.className = 'back-to-top';
+    btn.setAttribute('aria-label', 'Kembali ke atas');
+    btn.setAttribute('title', 'Kembali ke atas halaman');
+    btn.innerHTML = `
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    `;
+    document.body.appendChild(btn);
+  }
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 350) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  });
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
 }
 
 /**

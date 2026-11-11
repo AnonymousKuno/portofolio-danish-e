@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profil Diri | Danish Aditya P</title>
-  <meta name="description" content="Halaman profil diri, biografi profesional, kompetensi teknis, serta rekam jejak Danish Aditya P.">
+  <title>Danish Aditya P | Profil Diri & Rekam Jejak</title>
+  <meta name="description" content="Halaman profil diri, kompetensi keahlian jaringan, dan rekam jejak Danish Aditya P, siswa kelas 10 SMK jurusan Teknik Komputer dan Jaringan (TKJ).">
   
   <!-- Favicon SVG -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%232563eb'/><text x='50%' y='55%' font-size='50' font-weight='800' fill='white' dominant-baseline='middle' text-anchor='middle'>D</text></svg>">
@@ -14,7 +14,7 @@
 </head>
 <body>
 
-  <!-- Navigation Bar -->
+  <!-- Navigation Bar (Sticky with Page Transition Links) -->
   <header class="navbar">
     <div class="container nav-wrapper">
       <a href="index.html" class="brand-logo" aria-label="Beranda Danish Aditya">
@@ -23,9 +23,9 @@
       </a>
 
       <nav class="nav-links" id="main-nav">
-        <a href="index.html#beranda" class="nav-link">Halaman Utama</a>
-        <a href="index.html#profil" class="nav-link active">Profil Diri</a>
-        <a href="index.html#kontak" class="nav-link">Kontak & Kolaborasi</a>
+        <a href="index.html" class="nav-link">Halaman Utama</a>
+        <a href="profile.html" class="nav-link active">Profil Diri</a>
+        <a href="contact.html" class="nav-link">Kontak & Kolaborasi</a>
         <div class="mobile-theme-row">
           <span id="mobile-theme-label" style="font-weight: 600; font-size: 0.9rem;">Tema Tampilan</span>
           <button id="mobile-theme-toggle-btn" class="theme-toggle-btn" aria-label="Ganti Mode Tema Mobile">
@@ -52,6 +52,7 @@
       </nav>
 
       <div class="nav-actions">
+        <!-- Tombol Pengalih Tema Terang / Gelap (Desktop) -->
         <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Ganti Mode Tema" title="Ganti Mode Gelap / Terang">
           <span class="theme-icon-moon">
             <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -73,7 +74,7 @@
           </span>
         </button>
 
-        <a href="index.html#kontak" class="btn btn-primary btn-sm">
+        <a href="contact.html" class="btn btn-primary btn-sm">
           <span>Kirim Pesan</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -93,12 +94,17 @@
   </header>
 
   <main>
-    <!-- Profile Header Card (Memuat Foto Diri & Ringkasan Peran) -->
-    <section class="profile-hero">
+    <section class="section-pad">
       <div class="container">
         
-        <div class="profile-header-card">
-          <!-- Foto Diri dengan Fitur Upload Interaktif -->
+        <div class="section-head reveal">
+          <div class="section-label">Identitas & Rekam Jejak</div>
+          <h1 class="section-title">Profil & Data Diri</h1>
+          <p class="section-subtitle">Gambaran komprehensif mengenai latar belakang pendidikan kejuruan, etos belajar, dan kompetensi teknis.</p>
+        </div>
+
+        <!-- Kartu Header Profil (Foto Diri dengan Fitur Upload Interaktif) -->
+        <div class="profile-header-card reveal">
           <div class="profile-avatar-box">
             <div class="avatar-img-container" id="avatar-container" title="Klik untuk mengunggah foto profil Anda sendiri">
               <img src="assets/images/profile-photo.jpg" alt="Foto Profil Danish Aditya P" class="avatar-img" id="profile-avatar-display" onerror="this.src='assets/images/profile-photo.svg'">
@@ -111,7 +117,7 @@
               </div>
             </div>
 
-            <!-- Input File Tersembunyi (Dikontrol via JS) -->
+            <!-- Input File Tersembunyi untuk Upload Foto -->
             <input type="file" id="avatar-file-input" accept="image/png, image/jpeg, image/jpg, image/webp" style="display: none;">
 
             <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; justify-content: center;">
@@ -134,10 +140,9 @@
             </div>
           </div>
 
-          <!-- Deskripsi Semi Formal Siswa Kelas 10 SMK TKJ -->
           <div class="profile-intro">
             <div class="section-label">Tentang Saya</div>
-            <h1>Danish Aditya P</h1>
+            <h2 style="font-size: 2.25rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.35rem; color: var(--text-main);">Danish Aditya P</h2>
             <div class="profile-role">Siswa Kelas 10 SMK Jurusan Teknik Komputer dan Jaringan (TKJ)</div>
             
             <p class="profile-bio">
@@ -169,23 +174,10 @@
           </div>
         </div>
 
-      </div>
-    </section>
-
-    <!-- Bagian Kompetensi & Keahlian Teknis (JavaScript Animated) -->
-    <section class="section-pad" style="background-color: var(--bg-surface-subtle); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
-      <div class="container">
-        
-        <div class="section-head">
-          <div class="section-label">Spesialisasi</div>
-          <h2 class="section-title">Kompetensi & Keahlian</h2>
-          <p class="section-subtitle">Gambaran kapasitas teknis dan kemahiran instrumen rekayasa perangkat lunak.</p>
-        </div>
-
         <!-- Spesialisasi & Kemahiran Teknis (Tanpa Persentase) -->
-        <div class="skills-container">
+        <div class="skills-container" style="margin-bottom: 3.5rem;">
           <!-- Kolom 1: Kemahiran Teknis -->
-          <div class="skill-box">
+          <div class="skill-box reveal delay-1">
             <div class="skill-header">
               <div class="card-icon" style="margin-bottom: 0;">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -261,7 +253,7 @@
           </div>
 
           <!-- Kolom 2: Soft Skills & Etos Kerja (Tanpa Persentase) -->
-          <div class="skill-box">
+          <div class="skill-box reveal delay-2">
             <div class="skill-header">
               <div class="card-icon" style="margin-bottom: 0; background-color: #ecfdf5; color: #10b981;">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -280,7 +272,7 @@
             <div class="skill-card-list">
               <div class="skill-card-item">
                 <div class="skill-card-icon" style="background-color: #ecfdf5; color: #10b981;">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>
                 </div>
@@ -292,7 +284,7 @@
 
               <div class="skill-card-item">
                 <div class="skill-card-icon" style="background-color: #eff6ff; color: #2563eb;">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
                   </svg>
                 </div>
@@ -304,7 +296,7 @@
 
               <div class="skill-card-item">
                 <div class="skill-card-icon" style="background-color: #fef3c7; color: #d97706;">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="12" cy="12" r="10"></circle>
                     <polyline points="12 6 12 12 16 14"></polyline>
                   </svg>
@@ -317,7 +309,7 @@
 
               <div class="skill-card-item">
                 <div class="skill-card-icon" style="background-color: #f5f3ff; color: #7c3aed;">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
                   </svg>
                 </div>
@@ -330,28 +322,22 @@
           </div>
         </div>
 
-      </div>
-    </section>
-
-    <!-- Perjalanan & Rekam Jejak (Timeline) Disertai Ilustrasi -->
-    <section class="section-pad">
-      <div class="container">
-        
+        <!-- Linimasa Rekam Jejak (Timeline) & Ilustrasi -->
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; margin-bottom: 2rem;">
-          <div>
+          <div class="reveal-left">
             <div class="section-label">Perjalanan Berkarya</div>
             <h2 class="section-title">Dedikasi & Riwayat Progres</h2>
             <p class="section-subtitle">
               Setiap langkah dirancang dengan komitmen pembelajaran berkelanjutan dan pencapaian standar industri yang tinggi.
             </p>
           </div>
-          <div>
-            <img src="assets/images/about-illustration.svg" alt="Ilustrasi Pencapaian Profil" style="max-height: 280px; margin: 0 auto;">
+          <div class="reveal-right">
+            <img src="assets/images/about-illustration.svg" alt="Ilustrasi Pencapaian Profil" style="max-height: 260px; margin: 0 auto;">
           </div>
         </div>
 
         <div class="timeline">
-          <div class="timeline-item">
+          <div class="timeline-item reveal delay-1">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
               <div class="timeline-date">FASE SEKARANG</div>
@@ -363,7 +349,7 @@
             </div>
           </div>
 
-          <div class="timeline-item">
+          <div class="timeline-item reveal delay-2">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
               <div class="timeline-date">FASE PEMANTAPAN</div>
@@ -375,7 +361,7 @@
             </div>
           </div>
 
-          <div class="timeline-item">
+          <div class="timeline-item reveal delay-3">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
               <div class="timeline-date">FASE INSIPIENSI</div>
@@ -391,7 +377,7 @@
         <!-- Tombol Aksi Menuju Halaman Kontak -->
         <div style="text-align: center; margin-top: 3.5rem;">
           <a href="contact.html" class="btn btn-primary">
-            <span>Mari Berkolaborasi di Halaman Kontak</span>
+            <span>Mari Berdiskusi di Halaman Kontak</span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
@@ -408,7 +394,7 @@
     <div class="container">
       <div class="footer-top">
         <div class="brand-logo">
-          <div class="brand-badge">D</div>
+          <img src="assets/images/profile-photo.jpg" alt="Danish Aditya P" class="brand-avatar" onerror="this.src='assets/images/profile-photo.svg'">
           <span>Danish Aditya P</span>
         </div>
 
