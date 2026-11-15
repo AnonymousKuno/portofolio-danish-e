@@ -9,7 +9,8 @@
   <!-- Favicon SVG -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%232563eb'/><text x='50%' y='55%' font-size='50' font-weight='800' fill='white' dominant-baseline='middle' text-anchor='middle'>D</text></svg>">
   
-  <!-- CSS Stylesheet -->
+  <!-- CSS Stylesheet (Dual-path fallback) -->
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -17,9 +18,9 @@
   <!-- Navigation Bar (Sticky with Page Transition Links) -->
   <header class="navbar">
     <div class="container nav-wrapper">
-      <a href="index.html" class="brand-logo" aria-label="Beranda Danish Aditya">
-        <img src="assets/images/profile-photo.jpg" alt="Danish Aditya P" class="brand-avatar" onerror="this.src='assets/images/profile-photo.svg'">
-        <span>Danish Aditya P</span>
+      <a href="index.html" class="brand-logo" aria-label="Beranda Danish Aditya Pratama">
+        <img src="profile-photo.svg" alt="Danish Aditya Pratama" class="brand-avatar" onerror="this.onerror=null; this.src='assets/images/profile-photo.svg';">
+        <span>Danish Aditya Pratama</span>
       </a>
 
       <nav class="nav-links" id="main-nav">
@@ -106,7 +107,7 @@
           <!-- Sisi Kiri: Kanal Komunitas Publik & Ilustrasi -->
           <div class="reveal-left">
             <div style="margin-bottom: 2rem;">
-              <img src="assets/images/contact-illustration.svg" alt="Ilustrasi Interaksi dan Komunikasi Digital" style="max-height: 260px; margin: 0 auto 1.5rem;">
+              <img src="contact-illustration.svg" alt="Ilustrasi Interaksi dan Komunikasi Digital" style="max-height: 260px; margin: 0 auto 1.5rem;" onerror="this.onerror=null; this.src='assets/images/contact-illustration.svg';">
               <h2 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-main);">
                 Saluran Profil & Komunitas Publik
               </h2>
@@ -262,8 +263,8 @@
     <div class="container">
       <div class="footer-top">
         <div class="brand-logo">
-          <img src="assets/images/profile-photo.jpg" alt="Danish Aditya P" class="brand-avatar" onerror="this.src='assets/images/profile-photo.svg'">
-          <span>Danish Aditya P</span>
+          <img src="profile-photo.svg" alt="Danish Aditya Pratama" class="brand-avatar" onerror="this.onerror=null; this.src='assets/images/profile-photo.svg';">
+          <span>Danish Aditya Pratama</span>
         </div>
 
         <nav class="footer-nav">
@@ -275,7 +276,7 @@
 
       <div class="footer-bottom">
         <div>
-          &copy; <span id="current-year">2026</span> Danish Aditya P. Seluruh hak cipta dilindungi undang-undang.
+          &copy; <span id="current-year">2026</span> Danish Aditya Pratama. Seluruh hak cipta dilindungi undang-undang.
         </div>
         <div class="vercel-badge">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
@@ -287,7 +288,8 @@
     </div>
   </footer>
 
-  <!-- Main JavaScript File -->
+  <!-- Main JavaScript File (Dual-path fallback) -->
+  <script src="main.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

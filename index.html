@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Danish Aditya P | Beranda Resmi</title>
-  <meta name="description" content="Website portofolio dan profil resmi Danish Aditya P, siswa kelas 10 SMK jurusan Teknik Komputer dan Jaringan (TKJ).">
+  <title>Danish Aditya Pratama | Beranda Resmi</title>
+  <meta name="description" content="Website portofolio dan profil resmi Danish Aditya Pratama, siswa kelas 10 SMK jurusan Teknik Komputer dan Jaringan (TKJ).">
   
   <!-- Favicon SVG -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%232563eb'/><text x='50%' y='55%' font-size='50' font-weight='800' fill='white' dominant-baseline='middle' text-anchor='middle'>D</text></svg>">
   
-  <!-- CSS Stylesheet -->
+  <!-- CSS Stylesheet (Dual-path fallback) -->
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -17,9 +18,9 @@
   <!-- Navigation Bar (Sticky with Page Transition Links) -->
   <header class="navbar">
     <div class="container nav-wrapper">
-      <a href="index.html" class="brand-logo" aria-label="Beranda Danish Aditya">
-        <img src="assets/images/profile-photo.jpg" alt="Danish Aditya P" class="brand-avatar" onerror="this.src='assets/images/profile-photo.svg'">
-        <span>Danish Aditya P</span>
+      <a href="index.html" class="brand-logo" aria-label="Beranda Danish Aditya Pratama">
+        <img src="profile-photo.svg" alt="Danish Aditya Pratama" class="brand-avatar" onerror="this.onerror=null; this.src='assets/images/profile-photo.svg';">
+        <span>Danish Aditya Pratama</span>
       </a>
 
       <nav class="nav-links" id="main-nav">
@@ -99,7 +100,7 @@
       <div class="container hero-grid">
         <div class="hero-content reveal-left">
           <div class="badge-tag" style="padding: 0.35rem 0.95rem 0.35rem 0.4rem; display: inline-flex; align-items: center; gap: 0.65rem;">
-            <img src="assets/images/profile-photo.jpg" alt="Danish Aditya P" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover;" onerror="this.src='assets/images/profile-photo.svg'">
+            <img src="profile-photo.svg" alt="Danish Aditya Pratama" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover;" onerror="this.onerror=null; this.src='assets/images/profile-photo.svg';">
             <span class="badge-pulse"></span>
             <span>Siswa Kelas 10 SMK Jurusan TKJ &bull; Aktif Belajar & Eksplorasi</span>
           </div>
@@ -116,7 +117,7 @@
           </div>
 
           <p class="hero-desc">
-            Halo! Perkenalkan saya <strong>Danish Aditya P</strong>, seorang siswa kelas 10 SMK jurusan <strong>Teknik Komputer dan Jaringan (TKJ)</strong>. Di awal jenjang kejuruan ini, saya memiliki antusiasme tinggi untuk mempraktikkan konfigurasi perangkat jaringan, analisis paket data dengan Wireshark, pembuatan skrip otomasi menggunakan Python, serta penyusunan struktur web HTML.
+            Halo! Perkenalkan saya <strong>Danish Aditya Pratama</strong>, seorang siswa kelas 10 SMK jurusan <strong>Teknik Komputer dan Jaringan (TKJ)</strong>. Di awal jenjang kejuruan ini, saya memiliki antusiasme tinggi untuk mempraktikkan konfigurasi perangkat jaringan, analisis paket data dengan Wireshark, pembuatan skrip otomasi menggunakan Python, serta penyusunan struktur web HTML.
           </p>
 
           <div class="hero-actions">
@@ -139,7 +140,7 @@
 
         <div class="hero-visual reveal-right">
           <div class="visual-wrapper">
-            <img src="assets/images/hero-illustration.svg" alt="Ilustrasi Rekayasa Jaringan dan Otomasi" width="540" height="450">
+            <img src="hero-illustration.svg" alt="Ilustrasi Rekayasa Jaringan dan Otomasi" width="540" height="450" onerror="this.onerror=null; this.src='assets/images/hero-illustration.svg';">
           </div>
         </div>
       </div>
@@ -317,8 +318,8 @@
     <div class="container">
       <div class="footer-top">
         <div class="brand-logo">
-          <img src="assets/images/profile-photo.jpg" alt="Danish Aditya P" class="brand-avatar" onerror="this.src='assets/images/profile-photo.svg'">
-          <span>Danish Aditya P</span>
+          <img src="profile-photo.svg" alt="Danish Aditya Pratama" class="brand-avatar" onerror="this.onerror=null; this.src='assets/images/profile-photo.svg';">
+          <span>Danish Aditya Pratama</span>
         </div>
 
         <nav class="footer-nav">
@@ -330,7 +331,7 @@
 
       <div class="footer-bottom">
         <div>
-          &copy; <span id="current-year">2026</span> Danish Aditya P. Seluruh hak cipta dilindungi undang-undang.
+          &copy; <span id="current-year">2026</span> Danish Aditya Pratama. Seluruh hak cipta dilindungi undang-undang.
         </div>
         <div class="vercel-badge">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
@@ -342,7 +343,8 @@
     </div>
   </footer>
 
-  <!-- Main JavaScript File -->
+  <!-- Main JavaScript File (Dual-path fallback) -->
+  <script src="main.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

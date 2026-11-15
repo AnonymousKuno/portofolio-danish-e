@@ -2,6 +2,12 @@
   "version": 2,
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    { "source": "/assets/css/:path*", "destination": "/:path*" },
+    { "source": "/assets/js/:path*", "destination": "/:path*" },
+    { "source": "/assets/images/profile-photo.jpg", "destination": "/profile-photo.svg" },
+    { "source": "/assets/images/:path*", "destination": "/:path*" }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",
