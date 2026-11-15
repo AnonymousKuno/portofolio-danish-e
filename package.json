@@ -1,18 +1,11 @@
 {
   "name": "portfolio-profile-web",
   "version": "1.0.0",
-  "description": "Website profil dan portofolio profesional dengan JavaScript modern, tema terang (light theme), siap dideploy ke Vercel.",
+  "private": true,
+  "description": "Website portofolio resmi Danish Aditya Pratama, siswa kelas 10 SMK TKJ.",
   "scripts": {
-    "start": "serve .",
-    "dev": "serve ."
+    "build": "echo Static site ready"
   },
-  "keywords": [
-    "portfolio",
-    "profile",
-    "javascript",
-    "light-theme",
-    "vercel"
-  ],
-  "author": "Danish Aditya P",
+  "author": "Danish Aditya Pratama",
   "license": "MIT"
 }
