@@ -428,7 +428,7 @@ function initProfilePhotoManager() {
     if (resetBtn) {
       resetBtn.addEventListener('click', () => {
         localStorage.removeItem(STORAGE_KEY);
-        updateAllAvatarsOnPage('assets/images/profile-photo.jpg');
+        updateAllAvatarsOnPage('profile-photo.png');
         resetBtn.style.display = 'none';
         fileInput.value = '';
         showToast('Foto Direset', 'Foto profil telah dikembalikan ke foto bawaan.', 'success');

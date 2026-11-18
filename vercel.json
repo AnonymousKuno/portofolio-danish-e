@@ -5,7 +5,9 @@
   "rewrites": [
     { "source": "/assets/css/:path*", "destination": "/:path*" },
     { "source": "/assets/js/:path*", "destination": "/:path*" },
-    { "source": "/assets/images/profile-photo.jpg", "destination": "/profile-photo.svg" },
+    { "source": "/assets/images/profile-photo.png", "destination": "/profile-photo.png" },
+    { "source": "/assets/images/profile-photo.jpg", "destination": "/profile-photo.png" },
+    { "source": "/assets/images/profile-photo.svg", "destination": "/profile-photo.png" },
     { "source": "/assets/images/:path*", "destination": "/:path*" }
   ],
   "headers": [
