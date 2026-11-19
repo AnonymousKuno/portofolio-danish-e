@@ -25,8 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // 7. Inisialisasi Dinamis Footer & Tahun
   initFooterYear();
 
-  // 8. Inisialisasi Pengelolaan Foto Profil (Bisa Diganti Sendiri oleh Pengguna)
-  initProfilePhotoManager();
+  // 8. Foto Profil Terkunci Permanen (Hanya Pemilik yang Mengganti via Sumber File)
+  // Fitur upload publik dinonaktifkan demi privasi dan keamanan profil.
 
   // 9. Inisialisasi Form Kontak Interaktif
   initContactForm();
@@ -344,97 +344,12 @@ function initScrollEffects() {
 }
 
 /**
- * Pengelolaan Foto Profil (Bisa Diubah Sendiri Langsung oleh Pengguna)
- * Menyimpan foto yang diupload ke LocalStorage browser secara instan
+ * Foto profil kini bersifat paten dan terkunci permanen.
+ * Pengunjung publik tidak dapat mengubah foto.
+ * Hanya Danish (pemilik) yang dapat menggantinya langsung dari berkas sumber.
  */
 function initProfilePhotoManager() {
-  const STORAGE_KEY = 'user_custom_profile_photo';
-  const savedPhoto = localStorage.getItem(STORAGE_KEY);
-
-  // Fungsi helper untuk memperbarui semua foto avatar di seluruh halaman
-  const updateAllAvatarsOnPage = (photoUrl) => {
-    // 1. Gambar avatar di profil
-    const profileAvatar = document.getElementById('profile-avatar-display');
-    if (profileAvatar) profileAvatar.src = photoUrl;
-
-    // 2. Gambar avatar di navbar
-    document.querySelectorAll('.brand-avatar').forEach(img => {
-      img.src = photoUrl;
-    });
-
-    // 3. Gambar avatar di badge hero halaman utama
-    const heroBadgeImg = document.querySelector('.badge-tag img');
-    if (heroBadgeImg) heroBadgeImg.src = photoUrl;
-  };
-
-  // Jika sebelumnya pengguna sudah mengunggah foto sendiri, tampilkan foto tersebut
-  if (savedPhoto) {
-    updateAllAvatarsOnPage(savedPhoto);
-    const resetBtn = document.getElementById('btn-reset-photo');
-    if (resetBtn) resetBtn.style.display = 'inline-flex';
-  }
-
-  // Pengaturan input file dan tombol di halaman profil
-  const avatarContainer = document.getElementById('avatar-container');
-  const fileInput = document.getElementById('avatar-file-input');
-  const changeBtn = document.getElementById('btn-change-photo');
-  const resetBtn = document.getElementById('btn-reset-photo');
-
-  if (fileInput) {
-    // Memicu dialog pemilihan file saat tombol atau wadah foto diklik
-    const openFilePicker = () => fileInput.click();
-
-    if (avatarContainer) avatarContainer.addEventListener('click', openFilePicker);
-    if (changeBtn) changeBtn.addEventListener('click', openFilePicker);
-
-    // Saat pengguna memilih foto dari komputernya
-    fileInput.addEventListener('change', (e) => {
-      const file = e.target.files[0];
-      if (!file) return;
-
-      if (!file.type.startsWith('image/')) {
-        showToast('Format Salah', 'Mohon pilih berkas gambar (JPG, PNG, atau WebP).', 'warning');
-        return;
-      }
-
-      // Validasi ukuran (maksimal 5MB)
-      if (file.size > 5 * 1024 * 1024) {
-        showToast('Ukuran Terlalu Besar', 'Maksimal ukuran foto adalah 5MB.', 'warning');
-        return;
-      }
-
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        const base64Data = event.target.result;
-        try {
-          localStorage.setItem(STORAGE_KEY, base64Data);
-          updateAllAvatarsOnPage(base64Data);
-          if (resetBtn) resetBtn.style.display = 'inline-flex';
-
-          showToast(
-            'Foto Berhasil Diperbarui!',
-            'Foto profil Anda telah disimpan dan kini aktif di seluruh halaman website.',
-            'success'
-          );
-        } catch (err) {
-          console.error(err);
-          showToast('Peringatan', 'Foto berhasil dimuat sementara, namun memori browser penuh untuk penyimpanan permanen.', 'warning');
-        }
-      };
-      reader.readAsDataURL(file);
-    });
-
-    // Tombol reset foto ke default
-    if (resetBtn) {
-      resetBtn.addEventListener('click', () => {
-        localStorage.removeItem(STORAGE_KEY);
-        updateAllAvatarsOnPage('profile-photo.png');
-        resetBtn.style.display = 'none';
-        fileInput.value = '';
-        showToast('Foto Direset', 'Foto profil telah dikembalikan ke foto bawaan.', 'success');
-      });
-    }
-  }
+  // Fitur dinonaktifkan permanen untuk keamanan profil
 }
 
 /**
