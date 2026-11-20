@@ -11,7 +11,6 @@
   
   <!-- CSS Stylesheet -->
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
@@ -24,9 +23,11 @@
       </a>
 
       <nav class="nav-links" id="main-nav">
-        <a href="index.html" class="nav-link active">Halaman Utama</a>
+        <a href="index.html" class="nav-link active">Beranda</a>
+        <a href="#keahlian" class="nav-link">Keahlian TKJ</a>
+        <a href="#lab-praktik" class="nav-link">Lab & Praktik</a>
         <a href="profile.html" class="nav-link">Profil Diri</a>
-        <a href="contact.html" class="nav-link">Kontak & Kolaborasi</a>
+        <a href="contact.html" class="nav-link">Kontak</a>
         <div class="mobile-theme-row">
           <span id="mobile-theme-label" style="font-weight: 600; font-size: 0.9rem;">Tema Tampilan</span>
           <button id="mobile-theme-toggle-btn" class="theme-toggle-btn" aria-label="Ganti Mode Tema Mobile">
@@ -120,16 +121,23 @@
           </p>
 
           <div class="hero-actions">
-            <a href="profile.html" class="btn btn-primary">
-              <span>Jelajahi Profil Diri</span>
+            <a href="#keahlian" class="btn btn-primary">
+              <span>Eksplorasi Keahlian</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </a>
+            
+            <a href="profile.html" class="btn btn-outline">
+              <span>Profil Lengkap</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <circle cx="12" cy="7" r="4"></circle>
                 <path d="M5.5 21a8.38 8.38 0 0 1 13 0"></path>
               </svg>
             </a>
-            
+
             <a href="contact.html" class="btn btn-outline">
-              <span>Halaman Kontak</span>
+              <span>Hubungi Danish</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
               </svg>
@@ -283,6 +291,238 @@
       </div>
     </section>
 
+    <!-- SEKSI KEAHLIAN & PENGUASAAN TEKNOLOGI TKJ -->
+    <section id="keahlian" class="section-pad">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-label">Kompetensi Kejuruan TKJ</div>
+          <h2 class="section-title">Keahlian & Penguasaan Teknologi</h2>
+          <p class="section-subtitle">
+            Kompilasi keterampilan praktis, protokol jaringan, otomasi pemrograman, dan instrumen analisis yang saya tekuni secara intensif di bangku SMK.
+          </p>
+        </div>
+
+        <div class="skills-category-grid">
+          <!-- Kategori 1: Infrastruktur Jaringan & Pengkabelan -->
+          <div class="skill-category-card reveal delay-1">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon" style="background-color: #f0fdf4; color: #16a34a;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                  <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                  <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                  <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                </svg>
+              </div>
+              <div>
+                <h3 class="skill-cat-title">Infrastruktur & Pengkabelan</h3>
+                <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 500;">Hardware & Topologi</span>
+              </div>
+            </div>
+            <p class="skill-cat-desc">
+              Perakitan fisik media transmisi data, kalkulasi subnetting IPv4 terstruktur, hingga konfigurasi perangkat keras router dan switch jaringan lokal.
+            </p>
+            <div class="skill-pill-list">
+              <span class="skill-pill"><span class="skill-pill-dot"></span>Crimping UTP T568A / T568B</span>
+              <span class="skill-pill"><span class="skill-pill-dot"></span>Subnetting IPv4 CIDR / VLSM</span>
+              <span class="skill-pill"><span class="skill-pill-dot"></span>Pengujian LAN Tester</span>
+              <span class="skill-pill"><span class="skill-pill-dot"></span>Routing & Switching Dasar</span>
+              <span class="skill-pill"><span class="skill-pill-dot"></span>Topologi Star & LAN/WLAN</span>
+              <span class="skill-pill"><span class="skill-pill-dot"></span>DHCP & Static IP Management</span>
+            </div>
+          </div>
+
+          <!-- Kategori 2: Analisis Protokol & Wireshark -->
+          <div class="skill-category-card reveal delay-2">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon" style="background-color: #ecfeff; color: #0891b2;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+              </div>
+              <div>
+                <h3 class="skill-cat-title">Analisis Protokol Jaringan</h3>
+                <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 500;">Wireshark & Packet Inspection</span>
+              </div>
+            </div>
+            <p class="skill-cat-desc">
+              Menangkap dan menginspeksi alur pertukaran paket data secara langsung untuk troubleshooting koneksi, menganalisis latensi, dan memahami struktur protokol.
+            </p>
+            <div class="skill-pill-list">
+              <span class="skill-pill"><span class="skill-pill-dot" style="background-color: #0891b2;"></span>Wireshark Packet Sniffing</span>
+              <span class="skill-pill"><span class="skill-pill-dot" style="background-color: #0891b2;"></span>TCP 3-Way Handshake</span>
+              <span class="skill-pill"><span class="skill-pill-dot" style="background-color: #0891b2;"></span>Display Filters Wireshark</span>
+              <span class="skill-pill"><span class="skill-pill-dot" style="background-color: #0891b2;"></span>Protokol DNS, DHCP, ICMP</span>
+              <span class="skill-pill"><span class="skill-pill-dot" style="background-color: #0891b2;"></span>Header HTTP vs HTTPS</span>
+              <span class="skill-pill"><span class="skill-pill-dot" style="background-color: #0891b2;"></span>Analisis Latensi & Retransmission</span>
+            </div>
+          </div>
+
+          <!-- Kategori 3: Pemrograman & Otomasi Skrip -->
+          <div class="skill-category-card reveal delay-3">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon" style="background-color: #fef9c3; color: #a16207;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2z"></path>
+                  <path d="M8 10h8m-8 4h8"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="skill-cat-title">Pemrograman & Otomasi</h3>
+                <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 500;">Python 3 & Network Scripts</span>
+              </div>
+            </div>
+            <p class="skill-cat-desc">
+              Membangun skrip otomasi untuk mempermudah pemindaian host jaringan, parsing berkas log sistem, serta menerapkan logika algoritma yang bersih dan efisien.
+            </p>
+            <div class="skill-pill-list">
+              <span class="skill-pill"><span class="skill-pill-dot" style="background-color: #a16207;"></span>Python 3 Scripting</span>
+              <span class="skill-pill"><span class="skill-pill-dot" style="background-color: #a16207;"></span>Otomasi Ping Sweep CLI</span>
+              <span class="skill-pill"><span class="skill-pill-dot" style="background-color: #a16207;"></span>Socket Programming Sederhana</span>
+              <span class="skill-pill"><span class="skill-pill-dot" style="background-color: #a16207;"></span>Kalkulator Subnet IPv4</span>
+              <span class="skill-pill"><span class="skill-pill-dot" style="background-color: #a16207;"></span>Log File Parsing & File I/O</span>
+              <span class="skill-pill"><span class="skill-pill-dot" style="background-color: #a16207;"></span>Struktur Data & Clean Logic</span>
+            </div>
+          </div>
+
+          <!-- Kategori 4: Sistem Operasi, Web & Tooling -->
+          <div class="skill-category-card reveal delay-4">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon" style="background-color: #eff6ff; color: #2563eb;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <div>
+                <h3 class="skill-cat-title">Sistem Operasi & Web</h3>
+                <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 500;">Linux CLI, HTML & Deployment</span>
+              </div>
+            </div>
+            <p class="skill-cat-desc">
+              Pengoperasian terminal Linux untuk manajemen berkas dan hak akses, penyusunan arsitektur web HTML5/CSS, serta deployment berbasis Git ke Vercel.
+            </p>
+            <div class="skill-pill-list">
+              <span class="skill-pill"><span class="skill-pill-dot" style="background-color: #2563eb;"></span>Linux CLI (Debian/Ubuntu)</span>
+              <span class="skill-pill"><span class="skill-pill-dot" style="background-color: #2563eb;"></span>Hak Akses chmod & chown</span>
+              <span class="skill-pill"><span class="skill-pill-dot" style="background-color: #2563eb;"></span>HTML5 Semantik & Aksesibilitas</span>
+              <span class="skill-pill"><span class="skill-pill-dot" style="background-color: #2563eb;"></span>Modern CSS & Dark Mode</span>
+              <span class="skill-pill"><span class="skill-pill-dot" style="background-color: #2563eb;"></span>Cisco Packet Tracer</span>
+              <span class="skill-pill"><span class="skill-pill-dot" style="background-color: #2563eb;"></span>Git Version Control & Vercel</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tool Banner -->
+        <div class="tool-banner reveal">
+          <div class="tool-banner-title">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+            </svg>
+            <span>Instrumen & Perangkat Lunak Praktik Harian:</span>
+          </div>
+          <div class="tool-tags">
+            <span class="tool-tag">Cisco Packet Tracer</span>
+            <span class="tool-tag">Wireshark</span>
+            <span class="tool-tag">Python 3</span>
+            <span class="tool-tag">VS Code</span>
+            <span class="tool-tag">VirtualBox</span>
+            <span class="tool-tag">Git / GitHub</span>
+            <span class="tool-tag">Vercel</span>
+            <span class="tool-tag">Windows Terminal</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEKSI LAB & PRAKTIK MANDIRI (BERANDA ENRICHED) -->
+    <section id="lab-praktik" class="section-pad" style="background-color: var(--bg-surface-subtle); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-label">Praktik Nyata Kejuruan</div>
+          <h2 class="section-title">Eksplorasi Lab & Studi Kasus Mandiri</h2>
+          <p class="section-subtitle">
+            Simulasi dan implementasi nyata untuk menguji pemahaman teori kejuruan ke dalam skenario kerja nyata.
+          </p>
+        </div>
+
+        <div class="lab-grid">
+          <!-- Lab 1 -->
+          <div class="lab-card reveal delay-1">
+            <div class="lab-meta">
+              <span class="lab-badge">LAB 01 &bull; HARDWARE</span>
+              <span class="lab-status"><span class="lab-status-dot"></span>Selesai Diuji</span>
+            </div>
+            <h3 class="lab-title">Pengkabelan UTP & Topologi LAN Lokal</h3>
+            <p class="lab-summary">
+              Perakitan kabel UTP Cat5e/Cat6 dengan susunan TIA/EIA-568B Straight-through dan Crossover, verifikasi kelurusan 8 pin menggunakan LAN Tester, serta pengujian interkoneksi switch ke komputer klien.
+            </p>
+            <div class="lab-tools">
+              <span class="tag">UTP Cat6</span>
+              <span class="tag">RJ-45 Crimper</span>
+              <span class="tag">LAN Tester</span>
+              <span class="tag">Switch 8-Port</span>
+            </div>
+          </div>
+
+          <!-- Lab 2 -->
+          <div class="lab-card reveal delay-2">
+            <div class="lab-meta">
+              <span class="lab-badge">LAB 02 &bull; PROTOKOL</span>
+              <span class="lab-status"><span class="lab-status-dot"></span>Selesai Diuji</span>
+            </div>
+            <h3 class="lab-title">Inspeksi Paket Data & Analisis Wireshark</h3>
+            <p class="lab-summary">
+              Menangkap lalu lintas paket pada kartu antarmuka jaringan (NIC), memfilter query dan response protokol DNS, membedah alur 3-Way Handshake TCP (SYN, SYN-ACK, ACK), dan menganalisis delay transmisi.
+            </p>
+            <div class="lab-tools">
+              <span class="tag">Wireshark</span>
+              <span class="tag">TCP/IP</span>
+              <span class="tag">DNS & ICMP</span>
+              <span class="tag">Packet Sniffing</span>
+            </div>
+          </div>
+
+          <!-- Lab 3 -->
+          <div class="lab-card reveal delay-3">
+            <div class="lab-meta">
+              <span class="lab-badge">LAB 03 &bull; OTOMASI</span>
+              <span class="lab-status"><span class="lab-status-dot"></span>Selesai Diuji</span>
+            </div>
+            <h3 class="lab-title">Skrip Otomasi Network Ping Sweep (Python)</h3>
+            <p class="lab-summary">
+              Pengembangan skrip CLI menggunakan Python dengan modul bawaan <code>subprocess</code> dan <code>ipaddress</code> untuk memindai status keaktifan host pada subnet /24 secara otomatis tanpa software berat pihak ketiga.
+            </p>
+            <div class="lab-tools">
+              <span class="tag">Python 3</span>
+              <span class="tag">CLI Scripting</span>
+              <span class="tag">Subnetting</span>
+              <span class="tag">ICMP Automation</span>
+            </div>
+          </div>
+
+          <!-- Lab 4 -->
+          <div class="lab-card reveal delay-4">
+            <div class="lab-meta">
+              <span class="lab-badge">LAB 04 &bull; WEB & CLOUD</span>
+              <span class="lab-status"><span class="lab-status-dot"></span>Selesai Diuji</span>
+            </div>
+            <h3 class="lab-title">Arsitektur Web Portofolio & Deployment Cloud</h3>
+            <p class="lab-summary">
+              Membangun website portofolio interaktif berbasis HTML5 semantik dan CSS kustom dengan sistem beralih tema (terang/gelap), performa bebas dependensi berat, dan integrasi continuous deployment ke cloud Vercel.
+            </p>
+            <div class="lab-tools">
+              <span class="tag">HTML5 Semantik</span>
+              <span class="tag">Modern CSS</span>
+              <span class="tag">Git / GitHub</span>
+              <span class="tag">Vercel Cloud</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- SECTION CTA MENUJU PROFIL & KONTAK -->
     <section class="section-pad">
       <div class="container" style="text-align: center; max-width: 760px;">
@@ -322,7 +562,9 @@
         </div>
 
         <nav class="footer-nav">
-          <a href="index.html" class="footer-link">Halaman Utama</a>
+          <a href="index.html" class="footer-link">Beranda</a>
+          <a href="#keahlian" class="footer-link">Keahlian TKJ</a>
+          <a href="#lab-praktik" class="footer-link">Lab & Praktik</a>
           <a href="profile.html" class="footer-link">Profil Diri</a>
           <a href="contact.html" class="footer-link">Kontak</a>
         </nav>
@@ -344,6 +586,5 @@
 
   <!-- Main JavaScript File -->
   <script src="main.js"></script>
-  <script src="assets/js/main.js"></script>
 </body>
 </html>
